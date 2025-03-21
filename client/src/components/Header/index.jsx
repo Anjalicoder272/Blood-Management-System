@@ -5,7 +5,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className= "text-black mb-40 shadow-md">
+    <nav className= "text-black mb-4 shadow-md">
     <div className="container mx-auto flex justify-between items-center p-4">
       {/* Logo */}
       <h1 className="text-2xl font-bold">BloodBank</h1>
@@ -31,7 +31,7 @@ const Header = () => {
 
     {/* Mobile Menu */}
     {isOpen && (
-      <ul className="md:hidden bg-gray-800 text-center space-y-4 py-4">
+      <ul className="md:hidden text-center space-y-4 py-4">
         <li><Link to="/" className="block hover:text-red-400">Home</Link></li>
         <li><Link to="/about" className="block hover:text-red-400">About Us</Link></li>
         <li><Link to="/donate" className="block hover:text-red-400">Find Blood</Link></li>

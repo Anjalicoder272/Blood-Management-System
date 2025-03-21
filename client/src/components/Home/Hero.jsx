@@ -2,12 +2,15 @@ import React from "react";
 import HeroImage from "../../assets/images/hero-image.svg";
 
 const Hero = () => {
-
   return (
     <div>
       <div className="mx-[9%]">
         <div>
-          <img className="absolute z-[-1] left-0 top-0 h-[783px]" src={HeroImage} alt="Hero" />
+          <img
+            className="absolute z-[-1] left-0 top-0 h-[783px]"
+            src={HeroImage}
+            alt="Hero"
+          />
         </div>
         <div className="flex justify-center md:justify-end">
           <div className="w-full md:w-1/3">
@@ -15,9 +18,16 @@ const Hero = () => {
               Save Life Donate Blood
             </p>
             <p className="text-center mt-[20px] md:mt-[30px] md:text-right text-[13px]">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
-              industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and 
-              scrambled it to make a type specimen book.
+              Blood donation is a simple yet powerful act that can save
+              countless lives. With every donation, you give someone a second
+              chance at life and contribute to a healthier, stronger community.
+              Blood cannot be manufactured; it can only come from generous
+              donors. By stepping forward and donating, you become a hero to
+              those in need. Your small act of kindness can make a world of
+              difference—donate blood today and be the reason someone gets to
+              see tomorrow.
+              "Donate Blood, Become a Hero – A Drop of Yours Can
+              Save a Life!"
             </p>
           </div>
         </div>
