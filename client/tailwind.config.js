@@ -19,10 +19,14 @@ module.exports = {
       'xl': '1280px',
       // => @media (min-width: 1280px) { ... }
 
-      '2xl': '1536px',
+      '2xl': '1536px', 
       // => @media (min-width: 1536px) { ... }
     },
     extend: {
+      colors: {
+        blood: '#6A0B37',
+
+      },
       fontFamily: {
         'poppins': ['poppins', 'sans-serif'],
         'anton': ['Anton', 'sans-serif'],
