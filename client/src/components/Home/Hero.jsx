@@ -14,7 +14,7 @@ const Hero = () => {
         </div>
         <div className="flex justify-center md:justify-end">
           <div className="w-full md:w-1/3">
-            <p className="text-[32px] md:text-[48px] text-[#3C3C3C] font-[700] text-center md:text-right">
+            <p className="text-[32px] mt-28 md:text-[48px] text-[#3C3C3C] font-[700] text-center md:text-right">
               Save Life Donate Blood
             </p>
             <p className="text-center mt-[20px] md:mt-[30px] md:text-right text-[13px]">
