@@ -1,15 +1,14 @@
-import React from 'react';
-import './App.css';
+import './App.css'
 import { Toaster } from 'react-hot-toast';
 import Routes from "./Routes";
 
 function App() {
   return (
-   <div className="font-anton">
+    <div className="font-poppins">
      <Routes />
      <Toaster />
-   </div>
-  );
+    </div>
+  )
 }
 
-export default App;
+export default App
