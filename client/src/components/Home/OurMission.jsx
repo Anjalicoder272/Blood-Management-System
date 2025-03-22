@@ -3,7 +3,7 @@ import React from "react";
 const OurMission = () => {
   return (
     <div className="mt-64 mx-[9%]">
-      <p className="text-black text-3xl font-[700]">Our Mission</p>
+      <p className="text-black text-2xl md:text-3xl font-[700]">Our Mission</p>
       <p className="font-light text-[#3C3C3C] text-sm mt-[29px]">
         The mission of the Blood Bank Management System is to create a seamless,
         efficient, and transparent platform that ensures the timely availability

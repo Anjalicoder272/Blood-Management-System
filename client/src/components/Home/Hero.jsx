@@ -26,7 +26,7 @@ const Hero = () => {
               those in need. Your small act of kindness can make a world of
               difference—donate blood today and be the reason someone gets to
               see tomorrow.
-              "Donate Blood, Become a Hero – A Drop of Yours Can
+              "Donate Blood, Become a Hero - A Drop of Yours Can
               Save a Life!"
             </p>
           </div>

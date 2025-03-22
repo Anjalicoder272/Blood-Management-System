@@ -5,7 +5,7 @@ import HeartImage from "../../assets/images/heart.svg"
 const HowToGetBlood = () => {
   return (
     <div className='mx-[9%] mt-16'>
-      <p className="mb-20 text-3xl font-[700]">How to get Blood?</p>
+      <p className="mb-20 text-2xl md:text-3xl font-[700]">How to get Blood?</p>
       <div className="bg-blood relative rounded-full h-[250px] w-[250px] p-14 text-white mx-auto">
       <div className='absolute -top-7 -left-7 text-[50px] font-[700] text-center rounded-full border-[8px] w-[106px] h-[106px] text-blood border-blood'>1</div>
       <FaPenFancy className="text-white mx-auto " size={48} />
