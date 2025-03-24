@@ -8,7 +8,7 @@ const OurCollaborators = () => {
     <div className="mt-24 mx-[9%]">
 
       <div className="grid md:grid-cols-3 gap-14">
-        <div className="bg-blood p-20 rounded-2xl">
+        <div className="bg-blood p-20 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
         <img
           src={Image1}
           alt="Collaborator 1"
@@ -17,7 +17,7 @@ const OurCollaborators = () => {
         <p className="text-white text-center text-[13px] md:text-[18px] font-bold mt-10">To be a responsible donor, you must get a check-up.</p>
         </div>
 
-        <div className="bg-blood p-20 rounded-2xl">
+        <div className="bg-blood p-20 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
         <img
           src={Image2}
           alt="Collaborator 1"
@@ -28,7 +28,7 @@ const OurCollaborators = () => {
         </p>
         </div>
 
-        <div className="bg-blood p-20 rounded-2xl">
+        <div className="bg-blood p-20 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
         <img
           src={Image3}
           alt="Collaborator 1"
