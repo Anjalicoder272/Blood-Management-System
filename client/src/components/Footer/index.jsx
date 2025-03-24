@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="bg-blood text-white py-10 mt-20">
-      <div className="mx-[9%] flex flex-col md:flex-row justify-between items-center">
+      <div className="mx-[9%] flex flex-col md:flex-row justify-between ">
         
         <div className="text-center md:text-left">
           <h2 className="text-2xl font-bold">Blood Donation</h2>
