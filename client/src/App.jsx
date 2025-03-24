@@ -3,9 +3,12 @@ import { Toaster } from "react-hot-toast";
 import Routes from "./Routes";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
+import { useEffect } from "react";
 
 function App() {
-  AOS.init();
+  useEffect(() => {
+    AOS.init();
+  }, []); 
   return (
     <div className="relative min-h-screen">
       {/* Radial Gradient Background */}
