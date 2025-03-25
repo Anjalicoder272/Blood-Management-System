@@ -15,9 +15,8 @@ import { Autoplay, Pagination } from 'swiper/modules';
 const OurCollaborators = () => {
   return (
     <div className="mt-24 mx-[9%]">
-      <div className="flex flex-col md:flex-row w-full gap-14">
+      <div className=" w-full gap-14">
         <Swiper
-         slidesPerView={3}
         spaceBetween={30}
         loop={true}
         centeredSlides={true}
@@ -31,7 +30,7 @@ const OurCollaborators = () => {
             spaceBetween: 20,
           },
           768: {
-            slidesPerView: 1,
+            slidesPerView: 2,
             spaceBetween: 40,
           },
           1024: {

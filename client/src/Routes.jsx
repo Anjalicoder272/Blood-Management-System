@@ -3,7 +3,8 @@ import PrivateLayout from "./components/Layout";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Register from "./pages/Register";
+import ReceiverRegister from "./pages/ReceiverRegister";
+import DonorRegister from "./pages/DonorRegister";
 
 
 function AllRoutes() {
@@ -18,10 +19,18 @@ function AllRoutes() {
           }
         />
         <Route
-          path="/register"
+          path="/donor-register"
           element={
             <PrivateLayout>
-              <Register />
+              <DonorRegister />
+            </PrivateLayout>
+          }
+        />
+        <Route
+          path="/receiver-register"
+          element={
+            <PrivateLayout>
+              <ReceiverRegister />
             </PrivateLayout>
           }
         />
