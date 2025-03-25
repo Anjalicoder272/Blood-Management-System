@@ -60,7 +60,7 @@ const Hero = () => {
               to see tomorrow.
             </p>
             {/* Typewriter Effect */}
-            <p className="text-center md:text-right text-blood mt-14 md:mt-5 text-[23px] font-bold mt-5">
+            <p className="text-center md:text-right text-black md:text-blood mt-14 text-[23px] font-bold ">
               {text}
               <span className="animate-blink">|</span>
             </p>
