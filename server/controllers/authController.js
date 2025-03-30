@@ -1,67 +1,59 @@
-const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+const User = require('../models/User');
 
-// Login Controller
-const login = async (req, res) => {
-  const { email, password } = req.body;
+const registerUser = async (req, res) =>  {
+  // console.log("Hello");
 
-  try {
-    // Check if the user exists
-    const user = await User.findOne({ email });
-    if (!user) {
-      return res.status(400).json({ message: 'User not found' });
-    }
-
-    // Compare provided password with the hashed password in DB
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-      return res.status(400).json({ message: 'Invalid credentials' });
-    }
-
-    // Create a JWT token
-    const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1h' });
-    res.status(200).json({ token });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: 'Server error during login' });
+    const { firstName, lastName, email, phoneNumber, address, age, bloodGroup, district, state, pincode, latitude, longitude, password, role } = req.body;
+    if (!firstName || !lastName || !email || !phoneNumber || !password) {
+      return res.status(400).json({ message: 'All fields are required' });
   }
+    try {
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+            return res.status(400).json({ error: 'User already exists' });
+        }
+
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
+
+        const newUser = new User({
+            firstName, lastName, email, phoneNumber, address, age, bloodGroup, district, state, pincode, latitude, longitude, password: hashedPassword, role
+        });
+
+        await newUser.save();
+
+        const token = jwt.sign({ id: newUser._id, role: newUser.role }, process.env.JWT_SECRET, { expiresIn: '1h' });
+
+        res.status(200).json({ message: 'User registered successfully', token });
+    } catch (error) {
+        res.status(500).json({ message: 'Error registering user', error: error.message });
+    }
 };
 
-// Register Controller
-const register = async (req, res) => {
-  const { name, email, password, role } = req.body;
-
-  try {
-    // Check if the user already exists
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
-      return res.status(400).json({ error: 'User already exists' });
+const registerOrganization = async (req, res) =>  {
+    const { orgName, orgEmail, orgPhoneNumber , password } = req.body;
+    if (!orgName || !orgEmail || !orgPhoneNumber) {
+        return res.status(400).json({ message: 'All organization fields are required' });
     }
 
-    // Hash the password
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
+    try {
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(400).json({ message: 'User not found' });
+        }
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
+            return res.status(400).json({ message: 'Invalid credentials' });
+        }
 
-    // Create a new user
-    const newUser = new User({
-      name,
-      email,
-      password: hashedPassword,
-      role,
-    });
-
-    await newUser.save();
-
-    // Generate a JWT token
-    const token = jwt.sign({ id: newUser._id, role: newUser.role }, process.env.JWT_SECRET, { expiresIn: '1h' });
-
-    // Respond with the token
-    res.status(200).json({ token });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Server error during registration' });
-  }
+        const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1h' });
+        res.status(200).json({ token });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: 'Server error during login' });
+    }
 };
 
-module.exports = { login, register };
+module.exports = { registerUser, registerOrganization };
