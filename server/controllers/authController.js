@@ -106,9 +106,9 @@ const registerOrganization = async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    const newOrganization = new User({
+    const newOrganization = new Organization({
       orgName,
-      orgemail,
+      orgEmail,
       phoneNumber,
       address,
       password,
