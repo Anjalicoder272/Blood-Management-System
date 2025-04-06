@@ -33,6 +33,7 @@ const DonorRegister = () => {
     lastDonationMonth: "",
     lastDonationYear: "",
     password: "",
+    type:"receiver",
     consent: false,
     latitude: "",
     longitude: "",
@@ -114,6 +115,7 @@ const DonorRegister = () => {
 
       console.log(response.data);
     } catch (error) {
+      response
       toast.error(error.message || "An error occurred while registering.");
     } finally {
       setIsLoading(false);
@@ -124,7 +126,7 @@ const DonorRegister = () => {
     <div className='p-4'>
       <div className='p-4 shadow-lg'>
         <div className='text-white font-[500] text-[29px] py-5 px-4 md:text-[36px] w-full bg-gradient-to-r from-[#B32346] via-[#610834] to-[#46052D]'>
-          Register As Donor
+          Register As User
         </div>
 
         <div className='p-8 '>
@@ -212,6 +214,21 @@ const DonorRegister = () => {
                 Set Password
               </label>
               <input type="password" name="password" value={formData.password} onChange={handleChange} className="border p-2 col-span-6 md:col-span-2 rounded w-full  bg-inherit border-[#DADADA]" />
+            </div>
+            <div className='grid grid-cols-7 items-center mt-7 gap-8'>
+              <label className="text-[#4D4D4D] text-right ">
+                User Type
+              </label>
+              <select name="type" value={formData.type} onChange={handleChange} className="border p-2 col-span-6 md:col-span-2 rounded w-full  bg-inherit border-[#DADADA]">
+                  <option value="receiver">
+                    Receiver
+                  </option>
+                  <option value="donor">
+                    Donor
+                  </option>
+               
+              </select>
+            
             </div>
             <div className='grid grid-cols-7 items-center mt-7 gap-8'>
               <label className="text-[#4D4D4D] text-right">

@@ -4,8 +4,6 @@ const User = require("../models/User");
 const Organization = require("../models/Organization");
 
 const registerUser = async (req, res) => {
-  // console.log("Hello");
-
   const {
     firstName,
     lastName,
@@ -17,6 +15,7 @@ const registerUser = async (req, res) => {
     district,
     state,
     pincode,
+    type,
     latitude,
     longitude,
     password,
@@ -47,6 +46,7 @@ const registerUser = async (req, res) => {
       pincode,
       latitude,
       longitude,
+      type,
       password: hashedPassword,
       role,
     });

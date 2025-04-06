@@ -19,7 +19,7 @@ function AllRoutes() {
           }
         />
         <Route
-          path="/donor-register"
+          path="/registeruser"
           element={
             <PrivateLayout>
               <DonorRegister />

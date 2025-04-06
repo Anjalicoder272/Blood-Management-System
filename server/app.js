@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const cors = require("cors");  // Import the cors package
 let bodyParser = require("body-parser");
 
 // Environment variables setup
@@ -16,16 +17,11 @@ app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
-// CORS setup (allow cross-origin requests)
-app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
+// Enable CORS for all origins
+app.use(cors());  // This will allow all origins
 
 // Routes (Make sure to create specific route files)
 app.use('/api/auth', require('./routes/authRoutes'));
-
 
 // Start the server
 const PORT = process.env.PORT || 5000;
